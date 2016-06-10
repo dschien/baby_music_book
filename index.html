@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<title>Baby Music Book</title>
+<head>
+    <script>
+
+        var current = null;
+
+        function EvalSound(soundobj) {
+            if (current) {
+                current.pause();
+            }
+            var thissound = document.getElementById(soundobj);
+            current = thissound;
+            current.play();
+        }
+    </script>
+</head>
+
+<body>
+<img src="img/app.png" width="768" height="1024" alt="Planets" usemap="#planetmap">
+
+<map name="planetmap">
+    <area shape="rect" coords="0,0,768,261" href="#" alt="Sun" onClick="EvalSound('sound1')">
+    <area shape="rect" coords="0,261,768,512" href="#" alt="Mercury" onClick="EvalSound('sound2')">
+    <area shape="rect" coords="0,512,768,763" href="#" alt="Mercury">
+    <area shape="rect" coords="0,763,768,1024" href="#" alt="Mercury">
+
+</map>
+
+
+<audio id="sound1" style="display: none; width: 0px; height: 0px;" src="audio/1.mp3" controls preload="auto"
+       autobuffer/>
+<audio id="sound2" style="display: none; width: 0px; height: 0px;" src="audio/2.mp3" controls preload="auto"
+       autobuffer/>
+
+</body>
